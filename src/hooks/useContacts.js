@@ -3,15 +3,16 @@ import axios from "axios";
 
 
 const useContacts = () => {
+ 
     const {refetch, data:contacts=[] } = useQuery({
         queryKey: ['contacts'],
         queryFn: () =>
-          axios.get('http://localhost:5000/contacts')
+          axios.get(`https://contact-management-server-eight.vercel.app/contacts`)
           .then(
-            res => {return (res.data)}
+            res => {return res.data}
           ),
       })
-      return [contacts, refetch]
+      return [contacts, refetch ]
 };
 
 export default useContacts;

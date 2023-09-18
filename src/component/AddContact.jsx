@@ -13,7 +13,7 @@ const AddContact = () => {
     //   console.log(date);
 
     axios
-      .post("http://localhost:5000/contacts", {
+      .post("https://contact-management-server-eight.vercel.app/contacts", {
         name,
         email,
         number,

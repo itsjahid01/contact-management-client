@@ -22,13 +22,16 @@ const Contact = () => {
       number,
     };
 
-    fetch(`http://localhost:5000/contacts/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateContact),
-    })
+    fetch(
+      `https://contact-management-server-eight.vercel.app/contacts/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateContact),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

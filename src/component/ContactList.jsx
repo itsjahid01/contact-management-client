@@ -1,15 +1,14 @@
 import { MdDelete } from "react-icons/md";
-import useContacts from "../hooks/useContacts";
+
 import { BiSolidEdit } from "react-icons/bi";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-const ContactList = () => {
-  const [contacts, refetch] = useContacts();
+const ContactList = ({ contacts, refetch }) => {
   //   console.log(contacts);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/contacts/${id}`, {
+    fetch(`https://contact-management-server-eight.vercel.app/contacts/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -33,7 +32,7 @@ const ContactList = () => {
       <div className="overflow-x-auto container mx-auto p-8">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="bg-[#20303F] text-white">
             <tr>
               <th>
                 <label>
@@ -41,8 +40,8 @@ const ContactList = () => {
                 </label>
               </th>
               <th>Name</th>
-              <th>Mobile</th>
               <th>Email</th>
+              <th>Mobile</th>
               <th>Created Date</th>
               <th>Action</th>
             </tr>
