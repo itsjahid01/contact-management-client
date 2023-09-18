@@ -15,7 +15,7 @@ const Navbar = ({ handlePdf, handleSort, handleSearch }) => {
         <div className="flex-none gap-4">
           <div className="form-control">
             <input
-              onChange={handleSearch}
+              onBlur={handleSearch}
               type="text"
               placeholder="Search"
               className="input input-bordered w-24 md:w-auto text-black"

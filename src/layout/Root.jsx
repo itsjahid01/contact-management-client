@@ -18,9 +18,11 @@ const Root = () => {
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
-    // console.log(e.target.value);
+    console.log(e.target.value);
     setSearch(e.target.value);
+    refetch();
   };
+  console.log(search);
 
   const handleSort = () => {
     setSortOrder(sortOrder === "desc" ? "asc" : "desc");
